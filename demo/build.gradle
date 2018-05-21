@@ -1,14 +1,24 @@
+//tag::plugins[]
+plugins {
+  id "org.sonarqube" version "2.6.2"
+}
+//end::plugins[]
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
 
 mainClassName = 'hello.HelloWorld'
 
+
+
 // tag::repositories[]
 repositories { 
     mavenCentral() 
 }
 // end::repositories[]
+
+
 
 // tag::jar[]
 jar {
@@ -26,6 +36,7 @@ dependencies {
     testCompile "junit:junit:4.12"
 }
 // end::dependencies[]
+
 
 // tag::wrapper[]
 // end::wrapper[]
