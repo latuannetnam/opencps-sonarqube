@@ -64,8 +64,6 @@ RUN set -x \
 
 VOLUME "$SONARQUBE_HOME/data"
 WORKDIR $SONARQUBE_HOME
-COPY assets/run.sh $SONARQUBE_HOME/bin/
-RUN chmod +x $SONARQUBE_HOME/bin/run.sh
 
 #Plugins
 #Source: https://github.com/webdizz/docker-sonarqube-plugins/blob/master/Dockerfile
@@ -74,5 +72,10 @@ RUN cd $SONARQUBE_HOME/extensions/plugins/ && \
 	# Findbugs
 	curl -Lo ./sonar-findbugs-plugin-${FINDBUGS_PLUGIN_VERSION}.jar \
 	https://github.com/spotbugs/sonar-findbugs/releases/download/${FINDBUGS_PLUGIN_VERSION}/sonar-findbugs-plugin-${FINDBUGS_PLUGIN_VERSION}.jar
-	
+
+# Post configuration
+COPY assets/run.sh $SONARQUBE_HOME/bin/
+RUN chmod +x $SONARQUBE_HOME/bin/run.sh
+COPY assets/sonar.properties $SONARQUBE_HOME/conf/
+
 ENTRYPOINT ["./bin/run.sh"]
