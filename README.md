@@ -9,6 +9,7 @@
 * Cài đặt [Docker Compose](https://docs.docker.com/compose/install/)
 * Cài đặt [Java](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04)
 ## Quick start
+* chmod +x *.sh
 * Chạy lệnh: ./demo.sh
 * Mở Browser, vào URL: http://localhost:9000
 * Chọn Project [demo](http://localhost:9000/dashboard?id=demo)
@@ -22,6 +23,7 @@
 * Thư mục docker: opencps-sonarqube
 3. Khởi động dịch vụ SonarQube:
 * cd opencps-sonarqube
+* chmod +x *.sh
 * ./start.sh
 4. Cấu hình project và quét mã nguồn:
 * cd opencps-v2
