@@ -32,5 +32,6 @@
 * ./gradlew buildService deploy
 * ./gradlew sonarqube  -Dorg.gradle.jvmargs=-Xmx4096m -Dsonar.host.url=http://localhost:9000
 5. Kiểm tra report của Sonaqube:
+* Chờ khoảng 5-10 phút sau khi kết thúc bước 4 để SonarQube xử lý kết quả rà soát mã nguồn
 * URL: http://localhost:9000/dashboard?id=opencps-v2
 * Bấm vào từng Issue để mô tả chi tiết và cách khắc phục
